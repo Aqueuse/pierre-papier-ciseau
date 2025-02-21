@@ -1,46 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pierre Papier Ciseau</title>
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Pierre Papier Ciseau</h1>
     <div class="choices">
-        <div class="choice" onclick="play('pierre')">
-            <!-- Pierre -->
-            <img src="https://media.licdn.com/dms/image/v2/C5603AQG1jKKKthw01g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639597634504?e=1745452800&v=beta&t=att-6jOiy27V93lwsVxJvr9Jel0dIRSJzvhHdBR7CdM"/>
-        </div>
-        
-            <div class="choice" onclick="play('papier')">
-                <img src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" />
-            </div>
-        <div class="choice" onclick="play('ciseau')">✂️ Ciseau</div>
+      <div class="choice" onclick="play('pierre')">
+        <img
+          src="https://media.licdn.com/dms/image/v2/C5603AQG1jKKKthw01g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639597634504?e=1745452800&v=beta&t=att-6jOiy27V93lwsVxJvr9Jel0dIRSJzvhHdBR7CdM" />
+      </div>
+      <div class="choice" onclick="play('papier')">
+        <img
+          src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" />
+      </div>
+      <div class="choice" onclick="play('ciseau')">✂️ Ciseau</div>
     </div>
     <div class="result" id="result"></div>
-
+    <div class="stats" id="stats"></div>
     <script>
-        function play(userChoice) {
-            const choices = ['pierre', 'papier', 'ciseau'];
-            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-            let result = '';
-
-            if (userChoice === computerChoice) {
-                result = 'Égalité !';
-            } else if (
-                (userChoice === 'pierre' && computerChoice === 'ciseau') ||
-                (userChoice === 'papier' && computerChoice === 'pierre') ||
-                (userChoice === 'ciseau' && computerChoice === 'papier')
-            ) {
-                result = 'Vous gagnez !';
-            } else {
-                result = 'Vous perdez !';
-            }
-
-            document.getElementById('result').innerText = `Vous avez choisi ${userChoice}, l'ordinateur a choisi ${computerChoice}. ${result}`;
+      let stats = {
+        wins: 0,
+        losses: 0,
+        draws: 0,
+        pierre: 0,
+        papier: 0,
+        ciseau: 0,
+      };
+      function updateStatsDisplay() {
+        document.getElementById("stats").innerText =
+          "Gagnés: " +
+          stats.wins +
+          " - Perdus: " +
+          stats.losses +
+          " - Égalités: " +
+          stats.draws +
+          " | Pierre: " +
+          stats.pierre +
+          " - Papier: " +
+          stats.papier +
+          " - Ciseau: " +
+          stats.ciseau;
+      }
+      function play(userChoice) {
+        const choices = ["pierre", "papier", "ciseau"];
+        const computerChoice =
+          choices[Math.floor(Math.random() * choices.length)];
+        stats[userChoice]++;
+        let result = "";
+        if (userChoice === computerChoice) {
+          result = "Égalité !";
+          stats.draws++;
+        } else if (
+          (userChoice === "pierre" && computerChoice === "ciseau") ||
+          (userChoice === "papier" && computerChoice === "pierre") ||
+          (userChoice === "ciseau" && computerChoice === "papier")
+        ) {
+          result = "Vous gagnez !";
+          stats.wins++;
+        } else {
+          result = "Vous perdez !";
+          stats.losses++;
         }
+        document.getElementById("result").innerText =
+          "Vous avez choisi " +
+          userChoice +
+          ", l'ordinateur a choisi " +
+          computerChoice +
+          ". " +
+          result;
+        updateStatsDisplay();
+      }
     </script>
-</body>
+  </body>
 </html>
