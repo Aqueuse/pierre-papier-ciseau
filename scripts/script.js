@@ -1,4 +1,3 @@
-// --- Fallback en cas d'erreur avec l'API Capybara ---
 const fallbackGifs = [
     "https://i.chzbgr.com/full/9324013056/h3EB8D65F/a-group-of-capybaras-are-squeezed-into-an-outdoor-bath-tub",
     "https://media.tenor.com/oDB9EAV1ucoAAAAM/dancing-capybara.gif",
@@ -6,7 +5,6 @@ const fallbackGifs = [
     "https://sweezy-cursors.com/wp-content/uploads/cursor/capybara-dancing-animated/capybara-dancing-animated-custom-cursor.gif"
   ];
   
-  // --- Fonction de récupération d'un gif via l'API Capybara ---
   async function fetchCapybaraGif() {
     try {
       const response = await fetch('https://api.capy.lol/v1/capybara?t=' + Date.now(), { cache: 'no-cache' });
@@ -21,10 +19,9 @@ const fallbackGifs = [
     }
   }
   
-  // --- Affichage du gif de Capybara avec animation spinner ---
   async function showRandomGif() {
     const gifContainer = document.querySelector(".gif-container");
-    // Afficher un spinner pendant le chargement
+
     gifContainer.innerHTML = `
       <div class="flex justify-center items-center w-full h-40">
         <div class="border-t-4 border-b-4 border-blue-500 rounded-full w-16 h-16 animate-spin"></div>
@@ -39,7 +36,7 @@ const fallbackGifs = [
       const randomIndex = Math.floor(Math.random() * fallbackGifs.length);
       finalUrl = fallbackGifs[randomIndex] + "?t=" + Date.now();
     }
-    // Afficher l'image avec effet de fondu
+
     gifContainer.innerHTML = `<img id="capybaraGif" class="w-full rounded opacity-0 transition-opacity duration-500" src="${finalUrl}" alt="Capybara" />`;
     setTimeout(() => {
       document.getElementById("capybaraGif").classList.remove("opacity-0");
@@ -49,7 +46,6 @@ const fallbackGifs = [
   // Afficher un gif dès le chargement
   showRandomGif();
   
-  // --- Statistiques du jeu ---
   let stats = {
     wins: 0,
     losses: 0,
@@ -100,7 +96,6 @@ const fallbackGifs = [
     }, 2000);
     
     setTimeout(() => {
-      // Masquer le compte à rebours
       countdownElement.innerHTML = "";
       countdownElement.classList.add("hidden");
       
@@ -112,7 +107,6 @@ const fallbackGifs = [
       let colorClasses = "";
       
       if (userChoice === computerChoice) {
-        // Match nul
         result = `Match nul ! 🤝`;
         colorClasses = "bg-yellow-100 text-yellow-800";
         stats.draws++;
@@ -121,7 +115,6 @@ const fallbackGifs = [
         (userChoice === "gnu" && computerChoice === "beastie") ||
         (userChoice === "beastie" && computerChoice === "tux")
       ) {
-        // Victoire
         stats.wins++;
         if (userChoice === "tux" && computerChoice === "gnu") {
           result = "Tux bat GNU : Tux impose l'ordre avec son noyau structuré.";
@@ -132,7 +125,6 @@ const fallbackGifs = [
         }
         colorClasses = "bg-green-100 text-green-800";
       } else {
-        // Défaite
         stats.losses++;
         if (userChoice === "tux" && computerChoice === "beastie") {
           result = "Beastie bat Tux : BSD est plus permissif que Linux et l'attaque sur sa flexibilité.";
@@ -144,7 +136,6 @@ const fallbackGifs = [
         colorClasses = "bg-red-100 text-red-800";
       }
       
-      // Affichage du résultat avec coloration
       resultElement.innerHTML = result;
       resultElement.className = "hidden text-2xl font-semibold rounded-xl p-4 shadow-md mb-8 " + colorClasses;
       resultElement.classList.remove("hidden");
@@ -166,6 +157,16 @@ const fallbackGifs = [
       gnu: 0,
       beastie: 0,
     };
+
+    // Réinitialiser l'affichage du tour en cours
+    const countdownElement = document.getElementById("countdown");
+    const resultElement = document.getElementById("result");
+    countdownElement.innerHTML = "";
+    countdownElement.classList.add("hidden");
+    resultElement.innerHTML = "";
+    resultElement.classList.add("hidden");
+    
     updateStatsDisplay();
   }
+  
   

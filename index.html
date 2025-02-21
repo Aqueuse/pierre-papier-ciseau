@@ -4,14 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tux vs GNU vs Beastie - Jeu</title>
-    <!-- Intégration de Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body class="bg-gray-100 text-gray-800 flex flex-col items-center p-5 min-h-screen">
     <h1 class="text-4xl font-bold uppercase tracking-wider text-blue-900 mb-8">Tux vs GNU vs Beastie</h1>
     
-    <!-- Choix du joueur -->
     <div class="flex justify-center gap-8 mb-12">
       <!-- Tux -->
       <div class="bg-white rounded-xl p-5 shadow-md transform transition duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onclick="play('tux')">
@@ -23,7 +21,7 @@
         <img class="w-20 h-20 rounded" src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" alt="GNU">
         <p class="text-center mt-2 font-bold">GNU</p>
       </div>
-      <!-- Beastie (version d'origine avec gouttes d'eau) -->
+      <!-- Beastie (version de WALID avec gouttes d'eau) -->
       <div class="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl p-4 shadow-md transform transition duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onclick="play('beastie')">
         <div class="grid grid-cols-3 gap-2 mb-2">
           <span class="text-xl animate-pulse">💧</span>
@@ -37,16 +35,12 @@
       </div>
     </div>
     
-    <!-- Section Countdown (initialement masquée) -->
     <div id="countdown" class="hidden flex justify-center items-center h-32 my-8"></div>
     
-    <!-- Section Résultat (initialement masquée) -->
     <div id="result" class="hidden text-2xl font-semibold rounded-xl p-4 shadow-md mb-8"></div>
     
-    <!-- Section Statistiques (initialement masquée) -->
     <div id="stats" class="hidden bg-white rounded-xl p-4 shadow-md text-sm text-gray-700 mb-8"></div>
     
-    <!-- Boutons de contrôle -->
     <div class="flex gap-4 mb-8">
       <button onclick="resetStats()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">
         Réinitialiser les statistiques
@@ -56,12 +50,9 @@
       </button>
     </div>
     
-    <!-- Conteneur du gif / spinner -->
     <div class="gif-container w-full max-w-xs bg-white p-4 rounded-xl shadow-md">
-      <!-- Le gif ou le spinner sera injecté ici par le script -->
     </div>
     
-    <!-- Inclusion du script JS mis à jour -->
     <script src="./scripts/script.js"></script>
   </body>
 </html>
