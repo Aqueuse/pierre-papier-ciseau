@@ -1,18 +1,18 @@
-# Pierre - Papier - Ciseaux
+# Tux - GNU - Beastie
 
 ## Description du projet
 
-Ce projet est une implémentation interactive du jeu classique "Pierre - Papier - Ciseaux" en HTML, CSS et JavaScript. Il a été conçu dans un but pédagogique afin d'illustrer le concept de l'open source, permettant à chaque étudiant d'y ajouter sa propre contribution.
+Ce projet est une implémentation interactive du jeu classique "Pierre - Papier - Ciseaux" revisité en "Tux - GNU - Beastie" en HTML, CSS et JavaScript. Il a été conçu dans un but pédagogique afin d'illustrer le concept de l'open source, permettant à chaque étudiant d'y ajouter sa propre contribution.
 
 ## Règles du jeu
 
 Les règles du jeu sont simples :
 
-Pierre bat Ciseau
+Tux bat GNU
 
-Ciseau bat Papier
+GNU bat Beastie
 
-Papier bat Pierre
+Beastie bat Tux
 
 Si les deux choix sont identiques, c'est une égalité
 
@@ -32,7 +32,7 @@ Une touche humoristique avec l'affichage aléatoire de GIFs de capybaras.
 
 Ouvrez le fichier [index.html](https://www.youtube.com/watch?v=dQw4w9WgXcQ) dans un navigateur web.
 
-Cliquez sur l'une des trois icônes (Pierre, Papier ou Ciseau) pour effectuer votre choix.
+Cliquez sur l'une des trois icônes (Tux - GNU - Beastie) pour effectuer votre choix.
 
 Un compte à rebours de 3 secondes s'affiche avant la révélation du résultat.
 
