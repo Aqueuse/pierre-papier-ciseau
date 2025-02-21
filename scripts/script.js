@@ -168,5 +168,3 @@ const fallbackGifs = [
     
     updateStatsDisplay();
   }
-  
-  
