@@ -1,161 +1,172 @@
 :root {
-    --primary-color: #2C3E50;
-    --secondary-color: #E74C3C;
-    --accent-color: #3498DB;
-    --background-color: #ECF0F1;
-    --text-color: #2C3E50;
+  --primary-color: #2c3e50;
+  --secondary-color: #e74c3c;
+  --accent-color: #3498db;
+  --background-color: #ecf0f1;
+  --text-color: #2c3e50;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .choices {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .choice {
-    background-color: white;
-    border: none;
-    border-radius: 15px;
-    padding: 20px;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .choice:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .choice img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
 }
 
 /* Styles pour le "6 eaux" */
 .choice.six-waters {
-    background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%);
-    padding: 15px;
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  padding: 15px;
 }
 
 .waters-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-bottom: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 5px;
 }
 
 .water-drop {
-    font-size: 1.4rem;
-    animation: float 2s ease-in-out infinite;
-    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+  font-size: 1.4rem;
+  animation: float 2s ease-in-out infinite;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-5px) rotate(5deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(5deg);
+  }
 }
 
 .result {
-    font-size: 1.8rem;
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: var(--primary-color);
 }
 
 .countdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-    margin: 2rem 0;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin: 2rem 0;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
 }
 
 .countdown img {
-    width: 100px;
-    height: auto;
-    border-radius: 10px;
-    animation: pulse 1s ease-in-out infinite;
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  animation: pulse 1s ease-in-out infinite;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .stats {
-    background-color: white;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 2rem 0;
-    font-size: 1.1rem;
-    color: var(--text-color);
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
 }
 
 /* Style pour le conteneur de GIF Capybara */
 .gif-container {
-    margin-top: 2rem;
-    padding: 10px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 320px;
+  margin-top: 2rem;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
 }
 
 .gif-container img {
-    max-width: 100%;
-    border-radius: 10px;
-    display: block;
+  max-width: 100%;
+  border-radius: 10px;
+  display: block;
 }
 
 button {
-    margin-top: 2rem;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    background: var(--accent-color);
-    color: white;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-family: 'Poppins', sans-serif;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: #2980b9;
 }

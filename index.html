@@ -4,15 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pierre Papier Ciseau</title>
-    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" >
+    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   </head>
   <body>
     <h1>Pierre Papier Ciseau</h1>
     <div class="choices">
       <div class="choice" onclick="play('pierre')">
-        <img src="https://media.licdn.com/dms/image/v2/C5603AQG1jKKKthw01g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639597634504?e=1745452800&v=beta&t=att-6jOiy27V93lwsVxJvr9Jel0dIRSJzvhHdBR7CdM" />
+        <img
+          src="https://media.licdn.com/dms/image/v2/C5603AQG1jKKKthw01g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639597634504?e=1745452800&v=beta&t=att-6jOiy27V93lwsVxJvr9Jel0dIRSJzvhHdBR7CdM"
+        />
       </div>
       <div class="choice" onclick="play('papier')">
         <img src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" />
@@ -28,13 +30,12 @@
         </div>
       </div>
     </div>
-    <div class="countdown" id="countdown"></div>
     <div class="result" id="result"></div>
     <div class="stats" id="stats"></div>
     <button onclick="resetStats()">Réinitialiser les statistiques</button>
     <button onclick="showRandomGif()">🎲 Voir un Capybara</button>
     <div class="gif-container">
-        <img id="capybaraGif" src="" alt="Capybara" />
+      <img id="capybaraGif" src="" alt="Capybara" />
     </div>
     <script src="./scripts/script.js"></script>
   </body>
