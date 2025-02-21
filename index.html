@@ -10,15 +10,14 @@
     <h1>Pierre Papier Ciseau</h1>
     <div class="choices">
       <div class="choice" onclick="play('pierre')">
-        <img
-          src="https://media.licdn.com/dms/image/v2/C5603AQG1jKKKthw01g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639597634504?e=1745452800&v=beta&t=att-6jOiy27V93lwsVxJvr9Jel0dIRSJzvhHdBR7CdM" />
+        <img src="https://media.licdn.com/dms/image/v2/C5603AQG1jKKKthw01g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639597634504?e=1745452800&v=beta&t=att-6jOiy27V93lwsVxJvr9Jel0dIRSJzvhHdBR7CdM" />
       </div>
       <div class="choice" onclick="play('papier')">
-        <img
-          src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" />
+        <img src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" />
       </div>
       <div class="choice" onclick="play('ciseau')">✂️ Ciseau</div>
     </div>
+    <div class="countdown" id="countdown"></div>
     <div class="result" id="result"></div>
     <div class="stats" id="stats"></div>
     <script>
@@ -46,33 +45,49 @@
           stats.ciseau;
       }
       function play(userChoice) {
-        const choices = ["pierre", "papier", "ciseau"];
-        const computerChoice =
-          choices[Math.floor(Math.random() * choices.length)];
-        stats[userChoice]++;
-        let result = "";
-        if (userChoice === computerChoice) {
-          result = "Égalité !";
-          stats.draws++;
-        } else if (
-          (userChoice === "pierre" && computerChoice === "ciseau") ||
-          (userChoice === "papier" && computerChoice === "pierre") ||
-          (userChoice === "ciseau" && computerChoice === "papier")
-        ) {
-          result = "Vous gagnez !";
-          stats.wins++;
-        } else {
-          result = "Vous perdez !";
-          stats.losses++;
-        }
-        document.getElementById("result").innerText =
-          "Vous avez choisi " +
-          userChoice +
-          ", l'ordinateur a choisi " +
-          computerChoice +
-          ". " +
-          result;
-        updateStatsDisplay();
+        const countdownElement = document.getElementById("countdown");
+        countdownElement.innerText = "3";
+        countdownElement.classList.add("countdown");
+
+        setTimeout(() => {
+          countdownElement.innerText = "2";
+        }, 1000);
+
+        setTimeout(() => {
+          countdownElement.innerText = "1";
+        }, 2000);
+
+        setTimeout(() => {
+          const choices = ["pierre", "papier", "ciseau"];
+          const computerChoice =
+            choices[Math.floor(Math.random() * choices.length)];
+          stats[userChoice]++;
+          let result = "";
+          if (userChoice === computerChoice) {
+            result = "Égalité !";
+            stats.draws++;
+          } else if (
+            (userChoice === "pierre" && computerChoice === "ciseau") ||
+            (userChoice === "papier" && computerChoice === "pierre") ||
+            (userChoice === "ciseau" && computerChoice === "papier")
+          ) {
+            result = "Vous gagnez !";
+            stats.wins++;
+          } else {
+            result = "Vous perdez !";
+            stats.losses++;
+          }
+          document.getElementById("result").innerText =
+            "Vous avez choisi " +
+            userChoice +
+            ", l'ordinateur a choisi " +
+            computerChoice +
+            ". " +
+            result;
+          updateStatsDisplay();
+          countdownElement.innerText = "";
+          countdownElement.classList.remove("countdown");
+        }, 3000);
       }
     </script>
   </body>
