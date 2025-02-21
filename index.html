@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pierre Papier Ciseau</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1>Pierre Papier Ciseau</h1>
@@ -15,7 +16,16 @@
       <div class="choice" onclick="play('papier')">
         <img src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" />
       </div>
-      <div class="choice" onclick="play('ciseau')">✂️ Ciseau</div>
+      <div class="choice six-waters" onclick="play('ciseau')">
+        <div class="waters-container">
+          <span class="water-drop">💧</span>
+          <span class="water-drop">💧</span>
+          <span class="water-drop">💧</span>
+          <span class="water-drop">💧</span>
+          <span class="water-drop">💧</span>
+          <span class="water-drop">💧</span>
+        </div>
+      </div>
     </div>
     <div class="countdown" id="countdown"></div>
     <div class="result" id="result"></div>
