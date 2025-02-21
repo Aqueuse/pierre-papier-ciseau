@@ -76,3 +76,20 @@ function play(userChoice) {
         countdownElement.classList.remove("countdown");
     }, 3000);
 }
+
+
+window.onload = function() {
+    updateStatsDisplay();
+}
+  
+function resetStats() {
+    stats = {
+        wins: 0,
+        losses: 0,
+        draws: 0,
+        pierre: 0,
+        papier: 0,
+        ciseau: 0,
+    };
+    updateStatsDisplay();
+}
