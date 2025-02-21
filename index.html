@@ -46,15 +46,15 @@
       }
       function play(userChoice) {
         const countdownElement = document.getElementById("countdown");
-        countdownElement.innerText = "3";
+        countdownElement.innerHTML = '<img src="https://static8.depositphotos.com/1338574/829/i/450/depositphotos_8292990-stock-photo-the-number-3-in-gold.jpg" />';
         countdownElement.classList.add("countdown");
 
         setTimeout(() => {
-          countdownElement.innerText = "2";
+          countdownElement.innerHTML = '<img src="https://t3.ftcdn.net/jpg/00/25/85/36/360_F_25853657_TZaY3PRevrRfVLhVwACDw1YxdmGQLXhf.jpg" />';
         }, 1000);
 
         setTimeout(() => {
-          countdownElement.innerText = "1";
+          countdownElement.innerHTML = '<img src="https://png.pngtree.com/png-clipart/20200309/ourmid/pngtree-gold-number-1-png-image_2158836.jpg" />';
         }, 2000);
 
         setTimeout(() => {
@@ -85,7 +85,7 @@
             ". " +
             result;
           updateStatsDisplay();
-          countdownElement.innerText = "";
+          countdownElement.innerHTML = "";
           countdownElement.classList.remove("countdown");
         }, 3000);
       }

@@ -25,6 +25,14 @@ body {
 }
 
 .countdown {
-    font-size: 48px;
-    animation: countdown 1s steps(1, end) 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.countdown img {
+    width: 100px;
+    height: auto;
 }
