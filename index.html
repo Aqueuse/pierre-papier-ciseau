@@ -4,38 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pierre Papier Ciseau</title>
-    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" >
-    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- Intégration de Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <h1>Pierre Papier Ciseau</h1>
-    <div class="choices">
-      <div class="choice" onclick="play('pierre')">
-        <img src="https://media.licdn.com/dms/image/v2/C5603AQG1jKKKthw01g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639597634504?e=1745452800&v=beta&t=att-6jOiy27V93lwsVxJvr9Jel0dIRSJzvhHdBR7CdM" />
+  <body class="bg-gray-100 text-gray-800 flex flex-col items-center p-5 min-h-screen">
+    <h1 class="text-4xl font-bold uppercase tracking-wider text-blue-900 mb-8">Pierre Papier Ciseau</h1>
+    
+    <!-- Choix du joueur -->
+    <div class="flex justify-center gap-8 mb-12">
+      <!-- Tux (pierre) -->
+      <div class="bg-white rounded-xl p-5 shadow-md transform transition duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onclick="play('pierre')">
+        <img class="w-20 h-20 rounded" src="https://media.licdn.com/dms/image/v2/C5603AQG1jKKKthw01g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1639597634504?e=1745452800&v=beta&t=att-6jOiy27V93lwsVxJvr9Jel0dIRSJzvhHdBR7CdM" alt="Tux">
       </div>
-      <div class="choice" onclick="play('papier')">
-        <img src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" />
+      <!-- GNU (papier) -->
+      <div class="bg-white rounded-xl p-5 shadow-md transform transition duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onclick="play('papier')">
+        <img class="w-20 h-20 rounded" src="https://cdn-icons-png.freepik.com/256/9390/9390891.png?semt=ais_hybrid" alt="GNU">
       </div>
-      <div class="choice six-waters" onclick="play('ciseau')">
-        <div class="waters-container">
-          <span class="water-drop">💧</span>
-          <span class="water-drop">💧</span>
-          <span class="water-drop">💧</span>
-          <span class="water-drop">💧</span>
-          <span class="water-drop">💧</span>
-          <span class="water-drop">💧</span>
+      <!-- Beastie (ciseau) -->
+      <div class="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-xl p-4 shadow-md transform transition duration-200 hover:-translate-y-1 hover:shadow-lg cursor-pointer" onclick="play('ciseau')">
+        <div class="grid grid-cols-3 gap-2 mb-2">
+          <span class="text-xl animate-pulse">💧</span>
+          <span class="text-xl animate-pulse">💧</span>
+          <span class="text-xl animate-pulse">💧</span>
+          <span class="text-xl animate-pulse">💧</span>
+          <span class="text-xl animate-pulse">💧</span>
+          <span class="text-xl animate-pulse">💧</span>
         </div>
       </div>
     </div>
-    <div class="countdown" id="countdown"></div>
-    <div class="result" id="result"></div>
-    <div class="stats" id="stats"></div>
-    <button onclick="resetStats()">Réinitialiser les statistiques</button>
-    <button onclick="showRandomGif()">🎲 Voir un Capybara</button>
-    <div class="gif-container">
-        <img id="capybaraGif" src="" alt="Capybara" />
+    
+    <!-- Section Countdown (initialement masquée) -->
+    <div id="countdown" class="hidden flex justify-center items-center h-32 my-8"></div>
+    
+    <!-- Section Résultat (initialement masquée) -->
+    <div id="result" class="hidden text-2xl bg-white rounded-xl p-4 shadow-md text-blue-900 mb-8"></div>
+    
+    <!-- Section Statistiques (initialement masquée) -->
+    <div id="stats" class="hidden bg-white rounded-xl p-4 shadow-md text-sm text-gray-700 mb-8"></div>
+    
+    <!-- Boutons de contrôle -->
+    <div class="flex gap-4 mb-8">
+      <button onclick="resetStats()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">
+        Réinitialiser les statistiques
+      </button>
+      <button onclick="showRandomGif()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+        🎲 Voir un Capybara
+      </button>
     </div>
+    
+    <!-- Conteneur du gif / spinner -->
+    <div class="gif-container w-full max-w-xs bg-white p-4 rounded-xl shadow-md">
+      <!-- Le gif ou le spinner sera injecté ici par le script -->
+    </div>
+    
+    <!-- Inclusion du script JS mis à jour -->
     <script src="./scripts/script.js"></script>
   </body>
 </html>
